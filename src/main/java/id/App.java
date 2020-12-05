@@ -20,6 +20,7 @@ public class App {
         panel.add(btn1); //agregan los elm
         panel.add(lbl1);
         panel.add(checkBox);
+        panel.add(new JLabel("Este es un nuevo cambio"));
         panel.add(new JButton("Button 2"));
         frame.setVisible(true);
     }
