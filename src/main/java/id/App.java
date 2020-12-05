@@ -15,10 +15,10 @@ public class App {
         frame.add(panel);
         
         JButton btn1 = new JButton("Hola word"); //crean los elem
-        JLabel lbl1 = new JLabel("Jlabel Example");
+        JButton btn2 = new JButton("Valerde btn"); //crean los elem
         JCheckBox checkBox = new JCheckBox("opt1");
         panel.add(btn1); //agregan los elm
-        panel.add(lbl1);
+        panel.add(btn2);
         panel.add(checkBox);
         panel.add(new JButton("Button 2"));
         frame.setVisible(true);
