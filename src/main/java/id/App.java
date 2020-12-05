@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 public class App {
     public static void main(String[] args) {
-        JFrame frame = new JFrame("JFrame Example");        
+        JFrame frame = new JFrame("JFrame Example");
         frame.setSize(600, 300);        
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = new JPanel();
@@ -20,6 +20,7 @@ public class App {
         panel.add(btn1); //agregan los elm
         panel.add(lbl1);
         panel.add(checkBox);
+        panel.add(new JButton("Button 2"));
         frame.setVisible(true);
     }
 }
