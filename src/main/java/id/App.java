@@ -23,6 +23,8 @@ public class App {
         panel.add(new JLabel("Este es un nuevo cambio"));
         panel.add(new JButton("Button 2"));
         frame.setVisible(true);
+        
         //code editado por Pedro Delgado
+        System.out.println("Hellow world from henry");
     }
 }
