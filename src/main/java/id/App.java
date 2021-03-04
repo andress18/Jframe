@@ -23,6 +23,6 @@ public class App {
         panel.add(new JLabel("Este es un nuevo cambio"));
         panel.add(new JButton("Button 2"));
         frame.setVisible(true);
-        //code editado por programador gye
+        //code editado por Pedro Delgado
     }
 }
