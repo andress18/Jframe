@@ -30,6 +30,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /**
@@ -122,7 +123,10 @@ public class Controlador implements ActionListener {
                 vistaUser.getTxtName().setText("");
                 vistaUser.getTxtName1().setText("");
                 vistaUser.getTxtName().getFocusListeners();
+                
             } else {
+                
+                
                 vistaBienvenido.lblNom.setText(vistaUser.getTxtName().getText().toUpperCase() + " "
                         + vistaUser.getTxtName1().getText().toUpperCase());
                 vistaUser.dispose();
@@ -136,26 +140,34 @@ public class Controlador implements ActionListener {
             vistaUserC.setVisible(true);
             vistaUser.getTxtName().setText("");
             vistaUser.getTxtName1().setText("");
+            
         } else if (e.getSource().equals(vistaBienvenido.getBtnStar()) && vistaBienvenido.isVisible()) { // al presionar
-                                                                                                        // star
             vistaBienvenido.dispose();
             vistaDificultad.setVisible(true);
             vistaBienvenido.lblNom.setText("");
+            
         } else if (e.getSource().equals(vistaDificultad.getBtnCamb()) && vistaDificultad.isVisible()) { // Cuando
-                                                                                                        // quieres
-                                                                                                        // cambiar de
-                                                                                                        // usuario
             vistaDificultad.dispose();
             vistaUser.setVisible(true);
+            
         } else if (e.getSource().equals(vistaDificultad.getBtnGrand()) && vistaDificultad.isVisible()) { // Al presionar
-                                                                                                         // en
-                                                                                                         // Intermedio
+            cargarImagen(vistaGrandes.getBtnG1(), "src/Recursos/Topicos/pastsimple.png");
+            cargarImagen(vistaGrandes.getBtnG2(), "src/Recursos/Topicos/presentecontinuos.png");
+            cargarImagen(vistaGrandes.getBtnG3(), "src/Recursos/Topicos/irregularverbs.png");
+            cargarImagen(vistaGrandes.getBtnG4(), "src/Recursos/Topicos/date.png");
+            cargarImagen(vistaGrandes.getBtnEdad(), "src/Recursos/Niveles/Regresar.png");
             vistaDificultad.dispose();
             vistaGrandes.setVisible(true);
+            
         } else if (e.getSource().equals(vistaDificultad.getBtnPeque()) && vistaDificultad.isVisible()) { // Al presionar
-                                                                                                         // en Basico
+            cargarImagen(vistaPeque.getBtnA1(), "src/Recursos/Topicos/pronouns.png");
+            cargarImagen(vistaPeque.getBtnA2(), "src/Recursos/Topicos/adjectives.png");
+            cargarImagen(vistaPeque.getBtnA3(), "src/Recursos/Topicos/numbers.png");
+            cargarImagen(vistaPeque.getBtnA4(), "src/Recursos/Topicos/prepositions.png");
+            cargarImagen(vistaPeque.getBtnEdad(), "src/Recursos/Niveles/Regresar.png");
             vistaPeque.setVisible(true);
             vistaDificultad.dispose();
+            
         } else if (e.getSource().equals(vistaPeque.getBtnA1()) && vistaPeque.isVisible()) { // Topico Tema 1
             ArrayList<Clases> lista = clasesDao.ConsultarTodos(new BigDecimal(1));
             for (int i = 0; i < lista.size(); i++) {
@@ -452,6 +464,12 @@ public class Controlador implements ActionListener {
             vistaActividad.getLblPreguntaCompl4().setText(lista.get(n4).getPregunta());
             vistaActividad.getLblRespC2().setText(lista.get(n4).getRespuesta());
         }
+    }
+    
+    public void cargarImagen(JButton btn, String url){
+        ImageIcon boton = new ImageIcon(url);
+        Icon icono = new ImageIcon(boton.getImage().getScaledInstance(btn.getWidth(), btn.getHeight(), Image.SCALE_SMOOTH));
+        btn.setIcon(icono);
     }
 
 }
