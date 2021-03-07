@@ -47,6 +47,12 @@ public class FrmCrearUsuario extends javax.swing.JFrame {
     public void setTxtNombre(JTextField txtNombre) {
         this.txtNombre = txtNombre;
     }
+
+    public JButton getBtnRegre() {
+        return btnRegre;
+    }
+    
+    
     
     
 
@@ -68,28 +74,25 @@ public class FrmCrearUsuario extends javax.swing.JFrame {
         txtApellido = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        btnRegre = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(16, 240, 142));
 
-        jPanel2.setBackground(new java.awt.Color(54, 32, 188));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 167)));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jPanel2.setPreferredSize(new java.awt.Dimension(509, 252));
         jPanel2.setRequestFocusEnabled(false);
 
-        jLabel7.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Constantia", 0, 18)); // NOI18N
         jLabel7.setText("NAME:");
 
-        jLabel8.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Constantia", 0, 18)); // NOI18N
         jLabel8.setText("LAST NAME:");
 
-        txtNombre.setBackground(new java.awt.Color(54, 32, 188));
         txtNombre.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        txtNombre.setForeground(new java.awt.Color(255, 255, 255));
         txtNombre.setBorder(null);
 
         btnCrear.setBackground(new java.awt.Color(0, 255, 153));
@@ -111,9 +114,7 @@ public class FrmCrearUsuario extends javax.swing.JFrame {
             .addGap(0, 3, Short.MAX_VALUE)
         );
 
-        txtApellido.setBackground(new java.awt.Color(54, 32, 188));
         txtApellido.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        txtApellido.setForeground(new java.awt.Color(255, 255, 255));
         txtApellido.setBorder(null);
 
         jPanel7.setBackground(new java.awt.Color(0, 240, 131));
@@ -130,8 +131,18 @@ public class FrmCrearUsuario extends javax.swing.JFrame {
         );
 
         jLabel9.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setForeground(new java.awt.Color(255, 102, 0));
         jLabel9.setText("CREATING USER");
+
+        btnRegre.setBackground(new java.awt.Color(255, 255, 255));
+        btnRegre.setBorder(null);
+        btnRegre.setBorderPainted(false);
+        btnRegre.setOpaque(false);
+        btnRegre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRegreMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -142,7 +153,7 @@ public class FrmCrearUsuario extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addGap(137, 137, 137))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,15 +168,16 @@ public class FrmCrearUsuario extends javax.swing.JFrame {
                                 .addGap(11, 11, 11)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnRegre, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -186,9 +198,14 @@ public class FrmCrearUsuario extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(35, 35, 35)
-                .addComponent(btnCrear)
-                .addGap(26, 26, 26))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnCrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(23, 23, 23))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnRegre, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -204,6 +221,13 @@ public class FrmCrearUsuario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegreMouseClicked
+        //        FrmLogin log = new FrmLogin();
+        //        log.txt.setText("");
+        //        log.setVisible(true);
+        //        this.dispose();
+    }//GEN-LAST:event_btnRegreMouseClicked
 
     /**
      * @param args the command line arguments
@@ -242,6 +266,7 @@ public class FrmCrearUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrear;
+    private javax.swing.JButton btnRegre;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

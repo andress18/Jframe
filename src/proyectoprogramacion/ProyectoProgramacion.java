@@ -14,6 +14,13 @@ import com.Inicio.FrmLogin;
 import com.Inicio.frmInicio;
 import com.Resultados.dlgResultado;
 import controlador.Controlador;
+import controlador.ControladorActividades;
+import controlador.ControladorBasico;
+import controlador.ControladorDificultades;
+import controlador.ControladorInicio;
+import controlador.ControladorIntermedio;
+import controlador.ControladorLogin;
+import controlador.ControladorTopico;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -33,20 +40,18 @@ public class ProyectoProgramacion {
         PlantillaActividad vistaActividad = new PlantillaActividad();
         dlgResultado vistaResultado = new dlgResultado(vistaActividad, true);
         
-        Controlador controlador = new Controlador(ninos,topico, UserC, User, ActP,ActG, Dificultad, bienve, vistaTopico, vistaActividad, vistaResultado);
+        Controlador controlador = new Controlador(vistaActividad);
+        ControladorLogin controladorLogin = new ControladorLogin(ninos, UserC, User, bienve, controlador);
+        ControladorInicio controladorInicio = new ControladorInicio(bienve, Dificultad, controlador, vistaTopico);
+        ControladorDificultades controladorDificultades = new ControladorDificultades(Dificultad, ActP, ActG, User, controlador);
+        ControladorBasico controladorBasico = new ControladorBasico(ActP, vistaTopico, Dificultad);
+        ControladorIntermedio controladorIntermedio = new ControladorIntermedio(ActG, vistaTopico, Dificultad);
+        ControladorTopico controladorTopico = new ControladorTopico(vistaTopico, Dificultad, vistaActividad, controlador);
+        ControladorActividades controladorActividades = new ControladorActividades(vistaActividad, vistaResultado, Dificultad);
         
-        ImageIcon logo = new ImageIcon("src/Recursos/Inicio/ProgramInicio3.png");
-        Icon icono1 = new ImageIcon(logo.getImage().getScaledInstance(User.getLblImageL().getWidth(), User.getLblImageL().getHeight(), Image.SCALE_SMOOTH));
-        User.getLblImageL().setIcon(icono1);
-
-        ImageIcon boton1 = new ImageIcon("src/Recursos/Inicio/Ingreso.png");
-        Icon icono2 = new ImageIcon(boton1.getImage().getScaledInstance(User.getBtnEntrar().getWidth(), User.getBtnEntrar().getHeight(), Image.SCALE_SMOOTH));
-        User.getBtnEntrar().setIcon(icono2);
-
-        ImageIcon boton2 = new ImageIcon("src/Recursos/Inicio/Registro.png");
-        Icon icono3 = new ImageIcon(boton2.getImage().getScaledInstance(User.getBtnCrearL().getWidth(), User.getBtnCrearL().getHeight(), Image.SCALE_SMOOTH));
-        User.getBtnCrearL().setIcon(icono3);
-        User.repaint();
+        controlador.cargarImagen2(User.getLblImageL(), "src/Recursos/Inicio/ProgramInicio3.png");
+        controlador.cargarImagen(User.getBtnEntrar(), "src/Recursos/Inicio/Ingreso.png");
+        controlador.cargarImagen(User.getBtnCrearL(), "src/Recursos/Inicio/Registro.png");
         User.setVisible(true);
     }
     
