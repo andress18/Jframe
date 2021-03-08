@@ -56,7 +56,7 @@ public class PreguntasDAOImp implements PreguntasDAO{
                 con.Conectar();
                 Statement st = con.getCon().createStatement();
                 
-                String consulta="SELECT * FROM PREGUNTAS WHERE IDTOPICO = "+cla;
+                String consulta="SELECT * FROM PREGUNTAS WHERE ID_TOPICO = "+cla;
                 ResultSet rs = st.executeQuery(consulta);
                 Preguntas preguntas=null;
                 

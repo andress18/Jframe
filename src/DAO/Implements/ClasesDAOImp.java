@@ -35,7 +35,7 @@ public class ClasesDAOImp implements ClasesDAO {
                 con.Conectar();
                 Statement st = con.getCon().createStatement();
                 Dificultades dificultad = null;
-                String consulta="SELECT * FROM CLASES WHERE IDTOPICO = "+cla;
+                String consulta="SELECT * FROM CLASES WHERE ID_TOPICO = "+cla;
                 ResultSet rs = st.executeQuery(consulta);
                 Clases clases=null;
                 
