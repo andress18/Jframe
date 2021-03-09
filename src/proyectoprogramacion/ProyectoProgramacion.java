@@ -1,26 +1,26 @@
 
 package proyectoprogramacion;
 
-import DAO.Modelo.Ninos;
-import DAO.Modelo.Topicos;
-import Vista.PlantillaActividad;
-import Vista.frmTopicos;
+import Models.Ninos;
+import Models.Topicos;
+import Views.PlantillaActividad;
+import Views.frmTopicos;
 
-import com.Actividades.frmActividadGrand;
-import com.Actividades.frmActividadPeque;
-import com.Edades.frmEdades;
-import com.Inicio.FrmCrearUsuario;
-import com.Inicio.FrmLogin;
-import com.Inicio.frmInicio;
-import com.Resultados.dlgResultado;
-import controlador.Controlador;
-import controlador.ControladorActividades;
-import controlador.ControladorBasico;
-import controlador.ControladorDificultades;
-import controlador.ControladorInicio;
-import controlador.ControladorIntermedio;
-import controlador.ControladorLogin;
-import controlador.ControladorTopico;
+import Views.Actividades.frmActividadGrand;
+import Views.Actividades.frmActividadPeque;
+import Views.Edades.frmEdades;
+import Views.Inicio.FrmCrearUsuario;
+import Views.Inicio.FrmLogin;
+import Views.Inicio.frmInicio;
+import Views.Resultados.dlgResultado;
+import Controllers.Controlador;
+import Controllers.ControladorActividades;
+import Controllers.ControladorBasico;
+import Controllers.ControladorDificultades;
+import Controllers.ControladorInicio;
+import Controllers.ControladorIntermedio;
+import Controllers.ControladorLogin;
+import Controllers.ControladorTopico;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
