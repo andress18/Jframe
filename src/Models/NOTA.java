@@ -5,61 +5,38 @@
  */
 package Models;
 
-import java.math.BigDecimal;
+public class Nota {
+    private String nino, nivel;
+    private int nota;
 
-/**
- *
- * @author usuario
- */
-public class NOTA {
-    private BigDecimal Usuario;
-    private BigDecimal Niveles;
-    private BigDecimal Temas;
-    private BigDecimal Nota;
-
-    public NOTA() {
+    public Nota(String nino, String nivel, int nota) {
+        this.nino = nino;
+        this.nivel = nivel;
+        this.nota = nota;
     }
 
-    
-    public NOTA(BigDecimal Usuario, BigDecimal Niveles, BigDecimal Temas, BigDecimal Nota) {
-        this.Usuario = Usuario;
-        this.Niveles = Niveles;
-        this.Temas = Temas;
-        this.Nota = Nota;
+    public String getNino() {
+        return nino;
     }
 
-    public BigDecimal getUsuario() {
-        return Usuario;
+    public String getNivel() {
+        return nivel;
     }
 
-    public void setUsuario(BigDecimal Usuario) {
-        this.Usuario = Usuario;
+    public int getNota() {
+        return nota;
     }
 
-    public BigDecimal getNiveles() {
-        return Niveles;
+    public void setNino(String nino) {
+        this.nino = nino;
     }
 
-    public void setNiveles(BigDecimal Niveles) {
-        this.Niveles = Niveles;
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
     }
 
-    public BigDecimal getTemas() {
-        return Temas;
+    public void setNota(int nota) {
+        this.nota = nota;
     }
 
-    public void setTemas(BigDecimal Temas) {
-        this.Temas = Temas;
-    }
-
-    public BigDecimal getNota() {
-        return Nota;
-    }
-
-    public void setNota(BigDecimal Nota) {
-        this.Nota = Nota;
-    }
-    
-    
-    
 }

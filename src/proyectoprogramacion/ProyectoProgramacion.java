@@ -12,6 +12,7 @@ import Views.Edades.frmEdades;
 import Views.Inicio.FrmCrearUsuario;
 import Views.Inicio.FrmLogin;
 import Views.Inicio.frmInicio;
+import Views.Notas.Notas;
 import Views.Resultados.dlgResultado;
 import Controllers.Controlador;
 import Controllers.ControladorActividades;
@@ -20,6 +21,7 @@ import Controllers.ControladorDificultades;
 import Controllers.ControladorInicio;
 import Controllers.ControladorIntermedio;
 import Controllers.ControladorLogin;
+import Controllers.ControladorNotas;
 import Controllers.ControladorTopico;
 import java.awt.Image;
 import javax.swing.Icon;
@@ -40,6 +42,10 @@ public class ProyectoProgramacion {
         PlantillaActividad vistaActividad = new PlantillaActividad();
         dlgResultado vistaResultado = new dlgResultado(vistaActividad, true);
         
+        
+        Notas vistaNotas = new Notas();
+        ControladorNotas controladorNotas = new ControladorNotas(vistaNotas);
+        
         Controlador controlador = new Controlador(vistaActividad);
         ControladorLogin controladorLogin = new ControladorLogin(ninos, UserC, User, bienve, controlador);
         ControladorInicio controladorInicio = new ControladorInicio(bienve, Dificultad, controlador, vistaTopico);
@@ -52,7 +58,7 @@ public class ProyectoProgramacion {
         controlador.cargarImagen2(User.getLblImageL(), "src/Recursos/Inicio/ProgramInicio3.png");
         controlador.cargarImagen(User.getBtnEntrar(), "src/Recursos/Inicio/Ingreso.png");
         controlador.cargarImagen(User.getBtnCrearL(), "src/Recursos/Inicio/Registro.png");
-        User.setVisible(true);
+        vistaNotas.setVisible(true);
     }
     
 }

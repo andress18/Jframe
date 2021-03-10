@@ -25,7 +25,8 @@ public class ControladorLogin implements ActionListener {
     frmInicio vistaBienvenido;
     Controlador controlador;
 
-    public ControladorLogin(Ninos ninos, FrmCrearUsuario vistaUserC, FrmLogin vistaUser, frmInicio vistaBienvenido, Controlador controlador) {
+    public ControladorLogin(Ninos ninos, FrmCrearUsuario vistaUserC, FrmLogin vistaUser, frmInicio vistaBienvenido,
+            Controlador controlador) {
         this.ninos = ninos;
         this.vistaUserC = vistaUserC;
         this.vistaUser = vistaUser;
@@ -56,39 +57,41 @@ public class ControladorLogin implements ActionListener {
                 vistaUserC.getTxtApellido().setText("");
                 System.out.println("Datos incertados correctamente");
             }
-        } else if(e.getSource().equals(vistaUserC.getBtnRegre()) && vistaUserC.isVisible()) {
+        } else if (e.getSource().equals(vistaUserC.getBtnRegre()) && vistaUserC.isVisible()) {
             vistaUserC.dispose();
             vistaUser.setVisible(true);
             vistaUserC.getTxtNombre().setText("");
             vistaUserC.getTxtApellido().setText("");
-            
+
         } else if (e.getSource().equals(vistaUser.getBtnEntrar()) && vistaUser.isVisible()) { // Logonearte
             // TODO Tiene que verificar si los nombre y apellidos estan en la base de datos
             // userDao.Consultar(vistaUser.getTxtName().getText(),
             // vistaUser.getTxtName1().getText());
-            if ((userDao.Consultar(vistaUser.getTxtName().getText().toUpperCase(), vistaUser.getTxtName1().getText().toUpperCase())) == null) {
-                JOptionPane.showMessageDialog(vistaUserC, "Datos no encontrados", "Error de validacion", JOptionPane.ERROR_MESSAGE);
+            if ((userDao.Consultar(vistaUser.getTxtName().getText().toUpperCase(),
+                    vistaUser.getTxtName1().getText().toUpperCase())) == null) {
+                JOptionPane.showMessageDialog(vistaUserC, "Datos no encontrados", "Error de validacion",
+                        JOptionPane.ERROR_MESSAGE);
                 vistaUser.getTxtName().setText("");
                 vistaUser.getTxtName1().setText("");
                 vistaUser.getTxtName().getFocusListeners();
-                
+
             } else {
-                vistaBienvenido.lblNom.setText(vistaUser.getTxtName().getText().toUpperCase() + " " + vistaUser.getTxtName1().getText().toUpperCase());
+                vistaBienvenido.lblNom.setText(vistaUser.getTxtName().getText().toUpperCase() + " "
+                        + vistaUser.getTxtName1().getText().toUpperCase());
                 vistaUser.dispose();
                 vistaBienvenido.setVisible(true);
                 vistaUser.getTxtName().setText("");
                 vistaUser.getTxtName1().setText("");
-                
-            } 
+
+            }
         } else if (e.getSource().equals(vistaUser.getBtnCrearL()) && vistaUser.isVisible()) { // Para ir a crear usuario
             controlador.cargarImagen(vistaUserC.getBtnRegre(), "src/Recursos/Niveles/Regresar.png");
             vistaUser.dispose();
             vistaUserC.setVisible(true);
             vistaUser.getTxtName().setText("");
             vistaUser.getTxtName1().setText("");
-            
+
         }
     }
-    
-    
+
 }
