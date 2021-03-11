@@ -7,7 +7,9 @@ package Controllers;
 
 import Views.frmTopicos;
 import Views.Edades.frmEdades;
+import Views.Inicio.FrmLogin;
 import Views.Inicio.frmInicio;
+import Views.Notas.Notas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,13 +22,21 @@ public class ControladorInicio implements ActionListener {
     frmEdades vistaDificultad;
     Controlador controlador;
     frmTopicos vistaTopicos;
+    Notas vistaNotas;
+    FrmLogin vistaLogin;
+    
 
-    public ControladorInicio(frmInicio vistaBienvenido, frmEdades vistaDificultad, Controlador controlador, frmTopicos vistaTopicos) {
+    public ControladorInicio(frmInicio vistaBienvenido, frmEdades vistaDificultad, Controlador controlador, frmTopicos vistaTopicos, Notas vistaNotas, FrmLogin vistaLogin) {
         this.vistaBienvenido = vistaBienvenido;
         this.vistaDificultad = vistaDificultad;
         this.controlador = controlador;
         this.vistaTopicos = vistaTopicos;
+        this.vistaNotas = vistaNotas;
+        this.vistaLogin = vistaLogin;
         this.vistaBienvenido.getBtnStar().addActionListener(this);
+        this.vistaBienvenido.getBtnCamb().addActionListener(this);
+        this.vistaBienvenido.getBtnConsul().addActionListener(this);
+        this.vistaBienvenido.getBtnSalir().addActionListener(this);
     }
 
     @Override
@@ -38,6 +48,16 @@ public class ControladorInicio implements ActionListener {
             vistaDificultad.setVisible(true);
             vistaBienvenido.lblNom.setText("");
             
+        }else if (e.getSource().equals(vistaBienvenido.getBtnConsul()) && vistaBienvenido.isVisible()) {
+            controlador.cargarImagen(vistaNotas.getBtnBusc(), "src/Recursos/Notas/busqueda.png");
+            controlador.cargarImagen(vistaNotas.getBtnRegre(), "src/Recursos/Niveles/Regresar.png");
+            vistaNotas.setVisible(true);
+            vistaBienvenido.dispose();
+        }else if (e.getSource().equals(vistaBienvenido.getBtnCamb()) && vistaBienvenido.isVisible()) {
+            vistaLogin.setVisible(true);
+            vistaBienvenido.dispose();
+        }else if (e.getSource().equals(vistaBienvenido.getBtnSalir()) && vistaBienvenido.isVisible()) {
+            System.exit(0);
         }
     }
     

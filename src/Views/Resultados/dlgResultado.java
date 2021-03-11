@@ -7,6 +7,7 @@ package Views.Resultados;
 
 import Views.Actividades.frmActividadPeque;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 /**
  *
@@ -27,6 +28,11 @@ public class dlgResultado extends javax.swing.JDialog {
     public JButton getBtnFinish() {
         return btnFinish;
     }
+
+    public JLabel getLblNota() {
+        return lblNota;
+    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,7 +45,7 @@ public class dlgResultado extends javax.swing.JDialog {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblNota = new javax.swing.JLabel();
         btnFinish = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -51,10 +57,10 @@ public class dlgResultado extends javax.swing.JDialog {
         jLabel1.setForeground(new java.awt.Color(255, 204, 51));
         jLabel1.setText("Results");
 
-        jLabel3.setFont(new java.awt.Font("Segoe Print", 2, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 255, 0));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("-------");
+        lblNota.setFont(new java.awt.Font("Segoe Print", 2, 36)); // NOI18N
+        lblNota.setForeground(new java.awt.Color(51, 255, 0));
+        lblNota.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNota.setText("-------");
 
         btnFinish.setFont(new java.awt.Font("Segoe Print", 0, 24)); // NOI18N
         btnFinish.setText("Finish");
@@ -74,7 +80,7 @@ public class dlgResultado extends javax.swing.JDialog {
                 .addContainerGap(199, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblNota, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(185, 185, 185))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -87,7 +93,7 @@ public class dlgResultado extends javax.swing.JDialog {
                 .addGap(25, 25, 25)
                 .addComponent(jLabel1)
                 .addGap(40, 40, 40)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblNota, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(btnFinish)
                 .addGap(52, 52, 52))
@@ -159,7 +165,7 @@ public class dlgResultado extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFinish;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblNota;
     // End of variables declaration//GEN-END:variables
 }

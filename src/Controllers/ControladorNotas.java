@@ -10,21 +10,26 @@ import javax.swing.table.DefaultTableModel;
 
 import Implements.NotasDAOImp;
 import Models.Nota;
+import Views.Inicio.frmInicio;
 import Views.Notas.Notas;
 
 public class ControladorNotas implements ActionListener {
     Notas vistaNotas = new Notas();
+    frmInicio vistaInicio;
 
-    public ControladorNotas(Notas vistaNotas) {
+    public ControladorNotas(Notas vistaNotas, frmInicio vistaInicio) {
         this.vistaNotas = vistaNotas;
-        this.vistaNotas.getBtnBuscar().addActionListener(this);
+        this.vistaInicio = vistaInicio;
+        
+        this.vistaNotas.getBtnBusc().addActionListener(this);
+        this.vistaNotas.getBtnRegre().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
         NotasDAOImp notasDao = new NotasDAOImp();
-        if (e.getSource().equals(vistaNotas.getBtnBuscar())) {
+        if (e.getSource().equals(vistaNotas.getBtnBusc())) {
 
             String nombre = vistaNotas.getTxtNombre().getText();
             String apellido = vistaNotas.getTxtApellido().getText();
@@ -55,6 +60,17 @@ public class ControladorNotas implements ActionListener {
                 table.addRow(row);
             }
 
+        }else if (e.getSource().equals(vistaNotas.getBtnRegre())){
+            vistaInicio.setVisible(true);
+            DefaultTableModel table = (DefaultTableModel) vistaNotas.getTblNotas().getModel();
+            while (table.getRowCount() > 0) {
+                table.removeRow(0);
+            }
+            Object[] row = { "Sin datos", "Sin datos", "Sin datos" };
+            table.addRow(row);
+            vistaNotas.getTxtNombre().setText("");
+            vistaNotas.getTxtApellido().setText("");
+            vistaNotas.dispose();
         }
 
     }

@@ -22,6 +22,7 @@ import Controllers.ControladorInicio;
 import Controllers.ControladorIntermedio;
 import Controllers.ControladorLogin;
 import Controllers.ControladorNotas;
+import Controllers.ControladorResultado;
 import Controllers.ControladorTopico;
 import java.awt.Image;
 import javax.swing.Icon;
@@ -44,21 +45,22 @@ public class ProyectoProgramacion {
         
         
         Notas vistaNotas = new Notas();
-        ControladorNotas controladorNotas = new ControladorNotas(vistaNotas);
+        ControladorNotas controladorNotas = new ControladorNotas(vistaNotas, bienve);
         
         Controlador controlador = new Controlador(vistaActividad);
         ControladorLogin controladorLogin = new ControladorLogin(ninos, UserC, User, bienve, controlador);
-        ControladorInicio controladorInicio = new ControladorInicio(bienve, Dificultad, controlador, vistaTopico);
-        ControladorDificultades controladorDificultades = new ControladorDificultades(Dificultad, ActP, ActG, User, controlador);
+        ControladorInicio controladorInicio = new ControladorInicio(bienve, Dificultad, controlador, vistaTopico, vistaNotas, User);
+        ControladorDificultades controladorDificultades = new ControladorDificultades(Dificultad, ActP, ActG, User, controlador, bienve);
         ControladorBasico controladorBasico = new ControladorBasico(ActP, vistaTopico, Dificultad);
         ControladorIntermedio controladorIntermedio = new ControladorIntermedio(ActG, vistaTopico, Dificultad);
         ControladorTopico controladorTopico = new ControladorTopico(vistaTopico, Dificultad, vistaActividad, controlador);
         ControladorActividades controladorActividades = new ControladorActividades(vistaActividad, vistaResultado, Dificultad);
+        ControladorResultado controladorResultado = new ControladorResultado(vistaResultado, Dificultad, vistaActividad);
         
         controlador.cargarImagen2(User.getLblImageL(), "src/Recursos/Inicio/ProgramInicio3.png");
         controlador.cargarImagen(User.getBtnEntrar(), "src/Recursos/Inicio/Ingreso.png");
         controlador.cargarImagen(User.getBtnCrearL(), "src/Recursos/Inicio/Registro.png");
-        vistaNotas.setVisible(true);
+        User.setVisible(true);
     }
     
 }

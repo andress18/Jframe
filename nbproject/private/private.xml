@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/usuario/Documents/PIS%20github/Jframe/src/controlador/ControladorBasico.java</file>
-            <file>file:/C:/Users/usuario/Documents/PIS%20github/Jframe/src/DAO/Implements/ClasesDAOImp.java</file>
-            <file>file:/C:/Users/usuario/Documents/PIS%20github/Jframe/src/DAO/Implements/TopicoDAOImp.java</file>
-            <file>file:/C:/Users/usuario/Documents/PIS%20github/Jframe/src/DAO/Implements/PreguntasDAOImp.java</file>
-            <file>file:/C:/Users/usuario/Documents/PIS%20github/Jframe/src/proyectoprogramacion/ProyectoProgramacion.java</file>
-            <file>file:/C:/Users/usuario/Documents/PIS%20github/Jframe/src/DAO/Implements/UsuarioDAOImp.java</file>
+            <file>file:/C:/Users/usuario/Desktop/JFrame/src/Controllers/ControladorActividades.java</file>
+            <file>file:/C:/Users/usuario/Desktop/JFrame/src/Controllers/ControladorInicio.java</file>
+            <file>file:/C:/Users/usuario/Desktop/JFrame/src/proyectoprogramacion/ProyectoProgramacion.java</file>
+            <file>file:/C:/Users/usuario/Desktop/JFrame/src/Views/Resultados/dlgResultado.java</file>
         </group>
     </open-files>
 </project-private>

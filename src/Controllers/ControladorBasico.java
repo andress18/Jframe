@@ -42,7 +42,7 @@ public class ControladorBasico implements ActionListener {
             ArrayList<Clases> lista = clasesDao.ConsultarTodos(new BigDecimal(1));
             for (int i = 0; i < lista.size(); i++) {
                 vistaTopicos.getLblTitulo().setText(lista.get(i).getTema());
-                vistaTopicos.getLblDescripcion().setText("<html><p> " + lista.get(i).getExplicacion() + " </p></html>");
+                vistaTopicos.getLblDescripcion().setText("<html>" + lista.get(i).getExplicacion() + "</html>");
                 vistaTopicos.getLblEjemplo().setText(lista.get(i).getEjemplo());
                 vistaTopicos.getLblIngles().setText(lista.get(i).getTextoing());
                 vistaTopicos.getLblEspañol().setText(lista.get(i).getTextoesp());
@@ -51,12 +51,12 @@ public class ControladorBasico implements ActionListener {
             vistaTopicos.setVisible(true);
             vistaPeque.dispose();
 
-        } else if (e.getSource().equals(vistaPeque.getBtnA2()) && vistaPeque.isVisible()) { // Topico Tema 1
+        } else if (e.getSource().equals(vistaPeque.getBtnA2()) && vistaPeque.isVisible()) { // Topico Tema 2
             ArrayList<Clases> lista = clasesDao.ConsultarTodos(new BigDecimal(2));
             for (int i = 0; i < lista.size(); i++) {
                 vistaTopicos.getLblTitulo().setText(lista.get(i).getTema());
-                vistaTopicos.getLblDescripcion().setText("<html><p> " + lista.get(i).getExplicacion() + " </p></html>");
-                vistaTopicos.getLblEjemplo().setText(lista.get(i).getEjemplo());
+                vistaTopicos.getLblDescripcion().setText("<html>" + lista.get(i).getExplicacion() + "</html>");
+                vistaTopicos.getLblEjemplo().setText("<html>" +lista.get(i).getEjemplo()+ "</html>");
                 vistaTopicos.getLblIngles().setText(lista.get(i).getTextoing());
                 vistaTopicos.getLblEspañol().setText(lista.get(i).getTextoesp());
             }
@@ -64,7 +64,7 @@ public class ControladorBasico implements ActionListener {
             vistaTopicos.setVisible(true);
             vistaPeque.dispose();
 
-        } else if (e.getSource().equals(vistaPeque.getBtnA3()) && vistaPeque.isVisible()) { // Topico Tema 1
+        } else if (e.getSource().equals(vistaPeque.getBtnA3()) && vistaPeque.isVisible()) { // Topico Tema 3
             ArrayList<Clases> lista = clasesDao.ConsultarTodos(new BigDecimal(3));
             for (int i = 0; i < lista.size(); i++) {
                 vistaTopicos.getLblTitulo().setText(lista.get(i).getTema());
@@ -77,7 +77,7 @@ public class ControladorBasico implements ActionListener {
             vistaTopicos.setVisible(true);
             vistaPeque.dispose();
 
-        } else if (e.getSource().equals(vistaPeque.getBtnA4()) && vistaPeque.isVisible()) { // Topico Tema 1
+        } else if (e.getSource().equals(vistaPeque.getBtnA4()) && vistaPeque.isVisible()) { // Topico Tema 4
             ArrayList<Clases> lista = clasesDao.ConsultarTodos(new BigDecimal(4));
             for (int i = 0; i < lista.size(); i++) {
                 vistaTopicos.getLblTitulo().setText(lista.get(i).getTema());

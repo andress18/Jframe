@@ -79,6 +79,10 @@ public class ControladorLogin implements ActionListener {
                 vistaBienvenido.lblNom.setText(vistaUser.getTxtName().getText().toUpperCase() + " "
                         + vistaUser.getTxtName1().getText().toUpperCase());
                 vistaUser.dispose();
+                controlador.cargarImagen(vistaBienvenido.getBtnCamb(), "src/Recursos/Sistema/CambioUser.png");
+                controlador.cargarImagen(vistaBienvenido.getBtnStar(), "src/Recursos/Sistema/Temas.png");
+                controlador.cargarImagen(vistaBienvenido.getBtnConsul(), "src/Recursos/Sistema/notas.png");
+                controlador.cargarImagen(vistaBienvenido.getBtnSalir(), "src/Recursos/Sistema/Salida.png");
                 vistaBienvenido.setVisible(true);
                 vistaUser.getTxtName().setText("");
                 vistaUser.getTxtName1().setText("");
