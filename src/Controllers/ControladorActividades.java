@@ -19,9 +19,10 @@ public class ControladorActividades implements ActionListener {
     PlantillaActividad vistaActividad;
     dlgResultado vistaResultado1;
     frmEdades vistaDificultad;
-    double nota=0;
+    double nota = 0;
 
-    public ControladorActividades(PlantillaActividad vistaActividad, dlgResultado vistaResultado1, frmEdades vistaDificultad) {
+    public ControladorActividades(PlantillaActividad vistaActividad, dlgResultado vistaResultado1,
+            frmEdades vistaDificultad) {
         this.vistaActividad = vistaActividad;
         this.vistaResultado1 = vistaResultado1;
         this.vistaDificultad = vistaDificultad;
@@ -34,36 +35,38 @@ public class ControladorActividades implements ActionListener {
 
             if (vistaActividad.getRdb1().isSelected()) {
                 vistaActividad.getLblConfir1().setText("CORRECTO");
-                nota=nota+2.5;
-                
+                nota = nota + 5;
+
             } else {
                 vistaActividad.getLblConfir1().setText("INCORRECTO");
             }
 
             if (vistaActividad.getRdb4().isSelected()) {
                 vistaActividad.getLblConfir2().setText("CORRECTO");
-                nota=nota+2.5;
-                
+                nota = nota + 5;
+
             } else {
                 vistaActividad.getLblConfir2().setText("INCORRECTO");
             }
 
-            if (vistaActividad.getTxtRespuesta1().getText().toUpperCase().equals(vistaActividad.getLblRespC1().getText())) {
+            if (vistaActividad.getTxtRespuesta1().getText().toUpperCase()
+                    .equals(vistaActividad.getLblRespC1().getText())) {
                 vistaActividad.getLblConfir3().setText("CORRECTO");
-                nota=nota+2.5;
-                
+                nota = nota + 5;
+
             } else {
                 vistaActividad.getLblConfir3().setText("INCORRECTO");
             }
 
-            if (vistaActividad.getTxtRespuesta2().getText().toUpperCase().equals(vistaActividad.getLblRespC2().getText())) {
+            if (vistaActividad.getTxtRespuesta2().getText().toUpperCase()
+                    .equals(vistaActividad.getLblRespC2().getText())) {
                 vistaActividad.getLblConfir4().setText("CORRECTO");
-                nota=nota+2.5;
-                
+                nota = nota + 5;
+
             } else {
                 vistaActividad.getLblConfir4().setText("INCORRECTO");
             }
-            vistaResultado1.getLblNota().setText(String.format("%.2f /10",nota));
+            vistaResultado1.getLblNota().setText(String.format("%.2f/20", nota));
             vistaActividad.getLblConfir1().setVisible(true);
             vistaActividad.getLblConfir2().setVisible(true);
             vistaActividad.getLblConfir3().setVisible(true);
@@ -71,9 +74,8 @@ public class ControladorActividades implements ActionListener {
             vistaActividad.getLblRespC1().setVisible(true);
             vistaActividad.getLblRespC2().setVisible(true);
             vistaResultado1.setVisible(true);
-            nota=0;
-        } 
+            nota = 0;
+        }
     }
-    
-    
+
 }

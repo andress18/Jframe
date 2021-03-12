@@ -33,6 +33,9 @@ public class ControladorBasico implements ActionListener {
         this.vistaPeque.getBtnA3().addActionListener(this);
         this.vistaPeque.getBtnA4().addActionListener(this);
         this.vistaPeque.getBtnEdad().addActionListener(this);
+
+        String nombreNino = vistaPeque.getNombreNino();
+        int dificultad = vistaPeque.getDificultad();
     }
 
     @Override

@@ -17,9 +17,25 @@ import javax.swing.JButton;
  */
 public class frmActividadGrand extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frmActividadGrand
-     */
+    private int dificultad = 1;
+    private String nombreNino = "";
+
+    public String getNombreNino() {
+        return nombreNino;
+    }
+
+    public int getDificultad() {
+        return dificultad;
+    }
+
+    public void setNombreNino(String nombreNino) {
+        this.nombreNino = nombreNino;
+    }
+
+    public void setDificultad(int dificultad) {
+        this.dificultad = dificultad;
+    }
+
     public frmActividadGrand() {
         initComponents();
         this.setLocationRelativeTo(null);

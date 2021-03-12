@@ -25,7 +25,32 @@ public class NotasDAOImp implements NotasDAO {
     @Override
     public void Insertar(Nota value) {
         // TODO Auto-generated method stub
+        int dificultad = 1;
+        switch (value.getNivel()) {
+        case "Facil":
+            dificultad = 1;
+            break;
+        case "Medio":
+            dificultad = 2;
+            break;
+        case "Dificil":
+            dificultad = 3;
+            break;
 
+        default:
+            break;
+        }
+        if (!value.getNino().equals("-----------")) {
+            ResultSet query1 = executeQuery(String.format("SELECT ID FROM NINOS WHERE ID = '%s'", value.getNino()));
+            int idNino = 1;
+            try {
+                idNino = query1.getInt("ID");
+            } catch (SQLException e) {
+                // TODO: handle exception
+            }
+            String query = String.format("INSERT INTO NOTAS VALUES (%d, %d, %s)", idNino, dificultad, value.getNota());
+            executeQuery(query);
+        }
     }
 
     @Override
@@ -73,6 +98,19 @@ public class NotasDAOImp implements NotasDAO {
             // TODO: handle exception
 
             return notas;
+        }
+    }
+
+    private ResultSet executeQuery(String query) {
+        try {
+            Conexion con = new Conexion();
+            con.Conectar();
+            Statement st = con.getCon().createStatement();
+            ResultSet rs = st.executeQuery(query);
+            con.desconectar();
+            return rs;
+        } catch (SQLException exception) {
+            return null;
         }
     }
 

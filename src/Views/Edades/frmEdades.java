@@ -18,6 +18,8 @@ import javax.swing.JButton;
  * @author user
  */
 public class frmEdades extends javax.swing.JFrame {
+    
+    private String NombreNino;
 
     /**
      * Creates new form frmEdades
@@ -53,6 +55,18 @@ public class frmEdades extends javax.swing.JFrame {
     public JButton getBtnPeque() {
         return btnPeque;
     }
+
+    public String getNombreNino() {
+        return NombreNino;
+    }
+
+    public void setNombreNino(String NombreNino) {
+        this.NombreNino = NombreNino;
+    }
+
+    
+    
+    
     
     
     /**

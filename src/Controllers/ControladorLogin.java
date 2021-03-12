@@ -25,6 +25,8 @@ public class ControladorLogin implements ActionListener {
     frmInicio vistaBienvenido;
     Controlador controlador;
 
+
+
     public ControladorLogin(Ninos ninos, FrmCrearUsuario vistaUserC, FrmLogin vistaUser, frmInicio vistaBienvenido,
             Controlador controlador) {
         this.ninos = ninos;
@@ -94,7 +96,7 @@ public class ControladorLogin implements ActionListener {
             vistaUserC.setVisible(true);
             vistaUser.getTxtName().setText("");
             vistaUser.getTxtName1().setText("");
-
+            
         }
     }
 

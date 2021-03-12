@@ -24,9 +24,9 @@ public class ControladorInicio implements ActionListener {
     frmTopicos vistaTopicos;
     Notas vistaNotas;
     FrmLogin vistaLogin;
-    
 
-    public ControladorInicio(frmInicio vistaBienvenido, frmEdades vistaDificultad, Controlador controlador, frmTopicos vistaTopicos, Notas vistaNotas, FrmLogin vistaLogin) {
+    public ControladorInicio(frmInicio vistaBienvenido, frmEdades vistaDificultad, Controlador controlador,
+            frmTopicos vistaTopicos, Notas vistaNotas, FrmLogin vistaLogin) {
         this.vistaBienvenido = vistaBienvenido;
         this.vistaDificultad = vistaDificultad;
         this.controlador = controlador;
@@ -45,21 +45,22 @@ public class ControladorInicio implements ActionListener {
             controlador.cargarImagen(vistaTopicos.getBtnMenu(), "src/Recursos/Niveles/Regresar.png");
             controlador.cargarImagen(vistaTopicos.getBtnActividad(), "src/Recursos/Topicos/actividad.png");
             vistaBienvenido.dispose();
+            String name = vistaBienvenido.getLblNom().getText();
+            vistaDificultad.setNombreNino(name);
             vistaDificultad.setVisible(true);
-            vistaBienvenido.lblNom.setText("");
-            
-        }else if (e.getSource().equals(vistaBienvenido.getBtnConsul()) && vistaBienvenido.isVisible()) {
+            // vistaBienvenido.lblNom.setText("");
+
+        } else if (e.getSource().equals(vistaBienvenido.getBtnConsul()) && vistaBienvenido.isVisible()) {
             controlador.cargarImagen(vistaNotas.getBtnBusc(), "src/Recursos/Notas/busqueda.png");
             controlador.cargarImagen(vistaNotas.getBtnRegre(), "src/Recursos/Niveles/Regresar.png");
             vistaNotas.setVisible(true);
             vistaBienvenido.dispose();
-        }else if (e.getSource().equals(vistaBienvenido.getBtnCamb()) && vistaBienvenido.isVisible()) {
+        } else if (e.getSource().equals(vistaBienvenido.getBtnCamb()) && vistaBienvenido.isVisible()) {
             vistaLogin.setVisible(true);
             vistaBienvenido.dispose();
-        }else if (e.getSource().equals(vistaBienvenido.getBtnSalir()) && vistaBienvenido.isVisible()) {
+        } else if (e.getSource().equals(vistaBienvenido.getBtnSalir()) && vistaBienvenido.isVisible()) {
             System.exit(0);
         }
     }
-    
-    
+
 }

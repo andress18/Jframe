@@ -24,9 +24,6 @@ import Controllers.ControladorLogin;
 import Controllers.ControladorNotas;
 import Controllers.ControladorResultado;
 import Controllers.ControladorTopico;
-import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 
 public class ProyectoProgramacion {
 
@@ -38,29 +35,32 @@ public class ProyectoProgramacion {
         frmEdades Dificultad = new frmEdades();
         Topicos topico = new Topicos();
         frmActividadGrand ActG = new frmActividadGrand();
-        frmInicio bienve = new frmInicio();
+        frmInicio formInicio = new frmInicio();
         frmTopicos vistaTopico = new frmTopicos();
         PlantillaActividad vistaActividad = new PlantillaActividad();
         dlgResultado vistaResultado = new dlgResultado(vistaActividad, true);
-        
-        
+
         Notas vistaNotas = new Notas();
-        ControladorNotas controladorNotas = new ControladorNotas(vistaNotas, bienve);
-        
+        ControladorNotas controladorNotas = new ControladorNotas(vistaNotas, formInicio);
+
         Controlador controlador = new Controlador(vistaActividad);
-        ControladorLogin controladorLogin = new ControladorLogin(ninos, UserC, User, bienve, controlador);
-        ControladorInicio controladorInicio = new ControladorInicio(bienve, Dificultad, controlador, vistaTopico, vistaNotas, User);
-        ControladorDificultades controladorDificultades = new ControladorDificultades(Dificultad, ActP, ActG, User, controlador, bienve);
+        ControladorLogin controladorLogin = new ControladorLogin(ninos, UserC, User, formInicio, controlador);
+        ControladorInicio controladorInicio = new ControladorInicio(formInicio, Dificultad, controlador, vistaTopico,
+                vistaNotas, User);
+        ControladorDificultades controladorDificultades = new ControladorDificultades(Dificultad, ActP, ActG, User,
+                controlador, formInicio);
         ControladorBasico controladorBasico = new ControladorBasico(ActP, vistaTopico, Dificultad);
         ControladorIntermedio controladorIntermedio = new ControladorIntermedio(ActG, vistaTopico, Dificultad);
-        ControladorTopico controladorTopico = new ControladorTopico(vistaTopico, Dificultad, vistaActividad, controlador);
-        ControladorActividades controladorActividades = new ControladorActividades(vistaActividad, vistaResultado, Dificultad);
-        ControladorResultado controladorResultado = new ControladorResultado(vistaResultado, Dificultad, vistaActividad);
-        
+        ControladorTopico controladorTopico = new ControladorTopico(vistaTopico, Dificultad, vistaActividad,
+                controlador);
+        ControladorActividades controladorActividades = new ControladorActividades(vistaActividad, vistaResultado,
+                Dificultad);
+        ControladorResultado controladorResultado = new ControladorResultado(vistaResultado, Dificultad, vistaActividad,
+                formInicio, controladorDificultades);
+
         controlador.cargarImagen2(User.getLblImageL(), "src/Recursos/Inicio/ProgramInicio3.png");
         controlador.cargarImagen(User.getBtnEntrar(), "src/Recursos/Inicio/Ingreso.png");
         controlador.cargarImagen(User.getBtnCrearL(), "src/Recursos/Inicio/Registro.png");
         User.setVisible(true);
     }
-    
 }

@@ -7,9 +7,9 @@ package Models;
 
 public class Nota {
     private String nino, nivel;
-    private int nota;
+    private double nota;
 
-    public Nota(String nino, String nivel, int nota) {
+    public Nota(String nino, String nivel, double nota) {
         this.nino = nino;
         this.nivel = nivel;
         this.nota = nota;
@@ -23,7 +23,7 @@ public class Nota {
         return nivel;
     }
 
-    public int getNota() {
+    public double getNota() {
         return nota;
     }
 
@@ -35,7 +35,7 @@ public class Nota {
         this.nivel = nivel;
     }
 
-    public void setNota(int nota) {
+    public void setNota(double nota) {
         this.nota = nota;
     }
 
