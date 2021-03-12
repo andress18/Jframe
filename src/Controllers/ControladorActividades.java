@@ -71,8 +71,8 @@ public class ControladorActividades implements ActionListener {
             vistaActividad.getLblConfir2().setVisible(true);
             vistaActividad.getLblConfir3().setVisible(true);
             vistaActividad.getLblConfir4().setVisible(true);
-            vistaActividad.getLblRespC1().setVisible(true);
-            vistaActividad.getLblRespC2().setVisible(true);
+            //vistaActividad.getLblRespC1().setVisible(true);
+            //vistaActividad.getLblRespC2().setVisible(true);
             vistaResultado1.setVisible(true);
             nota = 0;
         }

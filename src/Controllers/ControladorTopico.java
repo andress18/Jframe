@@ -14,12 +14,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.io.*;
+import com.sun.speech.freetts.*;
 
 public class ControladorTopico implements ActionListener {
     frmTopicos vistaTopicos;
     frmEdades vistaDificultad;
     PlantillaActividad vistaActividad;
     Controlador controlador;
+    private static final String VOICENAME="kevin16";  //voz
 
     public ControladorTopico(frmTopicos vistaTopicos, frmEdades vistaDificultad, PlantillaActividad vistaActividad,
             Controlador controlador) {
@@ -29,6 +32,8 @@ public class ControladorTopico implements ActionListener {
         this.controlador = controlador;
         this.vistaTopicos.getBtnActividad().addActionListener(this);
         this.vistaTopicos.getBtnMenu().addActionListener(this);
+        this.vistaTopicos.getBtnEscu().addActionListener(this);
+        this.vistaTopicos.getBtnEscu1().addActionListener(this);
     }
 
     @Override
@@ -94,6 +99,27 @@ public class ControladorTopico implements ActionListener {
             vistaActividad.setVisible(true);
             vistaTopicos.dispose();
 
+        }else if (e.getSource().equals(vistaTopicos.getBtnEscu())) {
+            Voice voice;
+            VoiceManager vm = VoiceManager.getInstance();
+            voice=vm.getVoice(VOICENAME);
+            voice.allocate();
+
+            try {
+                voice.speak(vistaTopicos.getLblEjemplo().getText());
+            } catch (Exception ex) {
+            }
+        }
+        else if (e.getSource().equals(vistaTopicos.getBtnEscu1())) {
+            Voice voice;
+            VoiceManager vm = VoiceManager.getInstance();
+            voice=vm.getVoice(VOICENAME);
+            voice.allocate();
+
+            try {
+                voice.speak(vistaTopicos.getLblIngles().getText());
+            } catch (Exception ex) {
+            }
         }
     }
 
