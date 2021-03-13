@@ -61,6 +61,24 @@ public class ProyectoProgramacion {
         controlador.cargarImagen2(User.getLblImageL(), "src/Recursos/Inicio/ProgramInicio3.png");
         controlador.cargarImagen(User.getBtnEntrar(), "src/Recursos/Inicio/Ingreso.png");
         controlador.cargarImagen(User.getBtnCrearL(), "src/Recursos/Inicio/Registro.png");
+        User.getBtnEntrar().setBorder(null);
+        User.getBtnCrearL().setBorder(null);
+        formInicio.getBtnCamb().setBorder(null);
+        formInicio.getBtnConsul().setBorder(null);
+        formInicio.getBtnSalir().setBorder(null);
+        formInicio.getBtnStar().setBorder(null);
+        ActP.getBtnA1().setBorder(null);
+        ActP.getBtnA2().setBorder(null);
+        ActP.getBtnA3().setBorder(null);
+        ActP.getBtnA4().setBorder(null);
+        ActP.getBtnEdad().setBorder(null);
+        ActG.getBtnG1().setBorder(null);
+        ActG.getBtnG2().setBorder(null);
+        ActG.getBtnG3().setBorder(null);
+        ActG.getBtnG4().setBorder(null);
+        ActG.getBtnEdad().setBorder(null);
+        vistaTopico.getBtnActividad().setBorder(null);
+        vistaTopico.getBtnMenu().setBorder(null);
         User.setVisible(true);
     }
 }
