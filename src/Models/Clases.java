@@ -13,9 +13,7 @@ import java.math.BigDecimal;
  * @author usuario
  */
 
-public class Clases {
-
-   
+public class Clases {   
     
     private BigDecimal id;
    

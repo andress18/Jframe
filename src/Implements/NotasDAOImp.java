@@ -41,15 +41,25 @@ public class NotasDAOImp implements NotasDAO {
             break;
         }
         if (!value.getNino().equals("-----------")) {
-            ResultSet query1 = executeQuery(String.format("SELECT ID FROM NINOS WHERE ID = '%s'", value.getNino()));
-            int idNino = 1;
+            Conexion con = new Conexion();
             try {
-                idNino = query1.getInt("ID");
+                String[] ninoName = value.getNino().split(" ");
+                String consulta = String.format("SELECT * FROM NINOS WHERE NOMBRE = '%s'" + " AND APELLIDO = '%s'",
+                        ninoName[0], ninoName[1]);
+                ResultSet query1 = executeQuery(consulta);
+                int idNino = 1;
+                while (query1.next())
+                    idNino = query1.getInt("ID");
+                con.Conectar();
+                Statement st = con.getCon().createStatement();
+                String query = String.format("INSERT INTO NOTAS VALUES (%d, %d, %s)", idNino, dificultad,
+                        value.getNota());
+                st.executeUpdate(query);
+                con.desconectar();
             } catch (SQLException e) {
                 // TODO: handle exception
+                System.out.println(e.getMessage());
             }
-            String query = String.format("INSERT INTO NOTAS VALUES (%d, %d, %s)", idNino, dificultad, value.getNota());
-            executeQuery(query);
         }
     }
 

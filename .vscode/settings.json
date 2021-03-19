@@ -3,6 +3,16 @@
         "lib/**/*.jar",
         "c:\\Program Files\\NetBeans 8.2\\java\\modules\\ext\\AbsoluteLayout.jar",
         "c:\\Users\\User\\Documents\\Proyecto integrador\\ojdbc7.jar",
-        "c:\\Users\\User\\Documents\\Proyecto integrador\\mssql-jdbc-9.2.0.jre8.jar"
+        "c:\\Users\\User\\Documents\\Proyecto integrador\\mssql-jdbc-9.2.0.jre8.jar",
+        "Libreias/cgjsapi.jar",
+        "Libreias/cmu_time_awb.jar",
+        "Libreias/cmu_us_kal.jar",
+        "Libreias/cmudict04.jar",
+        "Libreias/cmulex.jar",
+        "Libreias/cmutimelex.jar",
+        "Libreias/en_us.jar",
+        "Libreias/freetts.jar",
+        "Libreias/freetts-jsapi10.jar",
+        "Libreias/mbrola.jar"
     ]
 }
