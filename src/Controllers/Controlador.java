@@ -5,34 +5,26 @@
  */
 package Controllers;
 
-import Implements.ClasesDAOImp;
-import Implements.PreguntasDAOImp;
-import DAO.TopicoDAO;
-import Implements.TopicoDAOImp;
-import Implements.UsuarioDAOImp;
-import Models.Clases;
-import Models.Ninos;
+
+
 import Models.Preguntas;
 import Models.Topicos;
-import Views.PlantillaActividad;
-import Views.frmTopicos;
 import Views.Actividades.frmActividadGrand;
 import Views.Actividades.frmActividadPeque;
 import Views.Edades.frmEdades;
 import Views.Inicio.FrmCrearUsuario;
 import Views.Inicio.FrmLogin;
 import Views.Inicio.frmInicio;
-import Views.Resultados.dlgResultado;
+import Views.Notas.Notas;
+import Views.PlantillaActividad;
+import Views.frmTopicos;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -40,10 +32,30 @@ import javax.swing.JOptionPane;
  */
 public class Controlador {
     PlantillaActividad vistaActividad;
-    
-    public Controlador(PlantillaActividad vistaActividad) {
+    FrmCrearUsuario UserC;
+    FrmLogin User ;
+    frmActividadPeque ActP;
+    frmEdades Dificultad;
+    Topicos topico;
+    frmActividadGrand ActG;
+    frmInicio formInicio;
+    frmTopicos vistaTopico;
+    Notas vistaNotas;
+
+    public Controlador(PlantillaActividad vistaActividad, FrmCrearUsuario UserC, FrmLogin User, frmActividadPeque ActP, frmEdades Dificultad, Topicos topico, frmActividadGrand ActG, frmInicio formInicio, frmTopicos vistaTopico, Notas vistaNotas) {
         this.vistaActividad = vistaActividad;
+        this.UserC = UserC;
+        this.User = User;
+        this.ActP = ActP;
+        this.Dificultad = Dificultad;
+        this.topico = topico;
+        this.ActG = ActG;
+        this.formInicio = formInicio;
+        this.vistaTopico = vistaTopico;
+        this.vistaNotas = vistaNotas;
     }
+    
+    
     
     int n1 = 0, n2 = 0, n3 = 0, n4 = 0, l1 = 0, l2 = 0, l3 = 0, l4 = 0, l5 = 0, l6 = 0, p1 = 0, p2 = 0, L = 0, L1 = 0,
             L2 = 0;
@@ -133,6 +145,29 @@ public class Controlador {
         ImageIcon boton = new ImageIcon(url);
         Icon icono = new ImageIcon(boton.getImage().getScaledInstance(lbl.getWidth(), lbl.getHeight(), Image.SCALE_SMOOTH));
         lbl.setIcon(icono);
+    }
+    
+    public void quitarBordes(){
+        User.getBtnEntrar().setBorder(null);
+        User.getBtnCrearL().setBorder(null);
+        formInicio.getBtnCamb().setBorder(null);
+        formInicio.getBtnConsul().setBorder(null);
+        formInicio.getBtnSalir().setBorder(null);
+        formInicio.getBtnStar().setBorder(null);
+        ActP.getBtnA1().setBorder(null);
+        ActP.getBtnA2().setBorder(null);
+        ActP.getBtnA3().setBorder(null);
+        ActP.getBtnA4().setBorder(null);
+        ActP.getBtnEdad().setBorder(null);
+        ActG.getBtnG1().setBorder(null);
+        ActG.getBtnG2().setBorder(null);
+        ActG.getBtnG3().setBorder(null);
+        ActG.getBtnG4().setBorder(null);
+        ActG.getBtnEdad().setBorder(null);
+        vistaTopico.getBtnActividad().setBorder(null);
+        vistaTopico.getBtnMenu().setBorder(null);
+        vistaNotas.getBtnBusc().setBorder(null);
+        vistaNotas.getBtnRegre().setBorder(null);
     }
 
 }

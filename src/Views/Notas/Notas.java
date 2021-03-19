@@ -136,11 +136,13 @@ public class Notas extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI Symbol", 0, 24)); // NOI18N
         jLabel3.setText("Nivel:");
 
+        rbtBasic.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(rbtBasic);
         rbtBasic.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         rbtBasic.setSelected(true);
         rbtBasic.setText("Básico");
 
+        rbtMedio.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(rbtMedio);
         rbtMedio.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         rbtMedio.setText("Medio");
@@ -212,7 +214,7 @@ public class Notas extends javax.swing.JFrame {
                         .addComponent(btnBusc, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(308, 308, 308)
                         .addComponent(btnRegre, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 81, Short.MAX_VALUE))
+                        .addGap(18, 25, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -226,7 +228,7 @@ public class Notas extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

@@ -43,42 +43,33 @@ public class ProyectoProgramacion {
         Notas vistaNotas = new Notas();
         ControladorNotas controladorNotas = new ControladorNotas(vistaNotas, formInicio);
 
-        Controlador controlador = new Controlador(vistaActividad);
+        Controlador controlador = new Controlador(vistaActividad, UserC, User, ActP, Dificultad, topico, ActG, formInicio, vistaTopico, vistaNotas);
+        
         ControladorLogin controladorLogin = new ControladorLogin(ninos, UserC, User, formInicio, controlador);
+        
         ControladorInicio controladorInicio = new ControladorInicio(formInicio, Dificultad, controlador, vistaTopico,
                 vistaNotas, User);
+        
         ControladorDificultades controladorDificultades = new ControladorDificultades(Dificultad, ActP, ActG, User,
                 controlador, formInicio);
+        
         ControladorBasico controladorBasico = new ControladorBasico(ActP, vistaTopico, Dificultad);
+        
         ControladorIntermedio controladorIntermedio = new ControladorIntermedio(ActG, vistaTopico, Dificultad);
+        
         ControladorTopico controladorTopico = new ControladorTopico(vistaTopico, Dificultad, vistaActividad,
                 controlador);
+        
         ControladorActividades controladorActividades = new ControladorActividades(vistaActividad, vistaResultado,
                 Dificultad);
+        
         ControladorResultado controladorResultado = new ControladorResultado(vistaResultado, Dificultad, vistaActividad,
                 formInicio, controladorDificultades);
 
         controlador.cargarImagen2(User.getLblImageL(), "src/Recursos/Inicio/ProgramInicio3.png");
         controlador.cargarImagen(User.getBtnEntrar(), "src/Recursos/Inicio/Ingreso.png");
         controlador.cargarImagen(User.getBtnCrearL(), "src/Recursos/Inicio/Registro.png");
-        User.getBtnEntrar().setBorder(null);
-        User.getBtnCrearL().setBorder(null);
-        formInicio.getBtnCamb().setBorder(null);
-        formInicio.getBtnConsul().setBorder(null);
-        formInicio.getBtnSalir().setBorder(null);
-        formInicio.getBtnStar().setBorder(null);
-        ActP.getBtnA1().setBorder(null);
-        ActP.getBtnA2().setBorder(null);
-        ActP.getBtnA3().setBorder(null);
-        ActP.getBtnA4().setBorder(null);
-        ActP.getBtnEdad().setBorder(null);
-        ActG.getBtnG1().setBorder(null);
-        ActG.getBtnG2().setBorder(null);
-        ActG.getBtnG3().setBorder(null);
-        ActG.getBtnG4().setBorder(null);
-        ActG.getBtnEdad().setBorder(null);
-        vistaTopico.getBtnActividad().setBorder(null);
-        vistaTopico.getBtnMenu().setBorder(null);
+        controlador.quitarBordes();
         User.setVisible(true);
     }
 }

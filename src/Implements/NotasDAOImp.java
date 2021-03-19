@@ -52,8 +52,9 @@ public class NotasDAOImp implements NotasDAO {
                     idNino = query1.getInt("ID");
                 con.Conectar();
                 Statement st = con.getCon().createStatement();
-                String query = String.format("INSERT INTO NOTAS VALUES (%d, %d, %s)", idNino, dificultad,
-                        value.getNota());
+                int nota =  Integer.parseInt(String.format("%.0f",value.getNota()));
+                String query = String.format("INSERT INTO NOTAS VALUES (%d, %d, %d)", idNino, dificultad,
+                       nota);
                 st.executeUpdate(query);
                 con.desconectar();
             } catch (SQLException e) {

@@ -49,12 +49,12 @@ public class ControladorResultado implements ActionListener {
             NotasDAOImp notaDao = new NotasDAOImp();
             String dificultadValue = Dificultad.getDificultad() == 1 ? "Facil" : "Medio";
             double calificacion = 0;
-            try {
-                String[] calificacionStr = vistaResultado1.getLblNota().getText().split("/");
-                calificacion = Double.parseDouble(calificacionStr[0]);
-            } catch (NumberFormatException exception) {
-                // TODO: handle exception
-            }
+            String calificacionStr = vistaResultado1.getLblNota().getText()
+                    .split("/")[0]
+                    .split(",")[0];
+            
+            calificacion = new Double(calificacionStr);
+            
             String nombreNino = vistaInicio.getLblNom().getText();
             Nota nota = new Nota(nombreNino, dificultadValue, calificacion);
             notaDao.Insertar(nota);
